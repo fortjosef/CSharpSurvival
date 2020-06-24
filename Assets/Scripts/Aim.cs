@@ -17,6 +17,7 @@ public class Aim : MonoBehaviour {
         Debug.DrawRay(transform.position, directionToFace);
         //directionToFace = Quaternion.Euler(new Vector3(0, -90, -90)) * directionToFace;
         Quaternion newRotation = Quaternion.LookRotation(directionToFace);
-        transform.rotation = newRotation;
+        //transform.rotation = newRotation;
+        transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime);
     }
 }
