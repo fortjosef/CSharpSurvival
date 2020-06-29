@@ -20,7 +20,7 @@ public class Crate : MonoBehaviour {
 
             if (allRigidBodies.Length > 0) {
                 foreach (var body in allRigidBodies) {
-                    //body.AddExplosionForce(500, transform.position, 1);
+                    body.AddExplosionForce(500, transform.position, 1);
                 }
             }
 
