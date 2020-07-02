@@ -19,5 +19,34 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.C)) {
             renderer.material.color = Color.green;
         }
+
+        Color colorToUse = Color.green;
+        bool hasUpdate = false;
+
+        if (Input.anyKey) {
+            //Debug.Log(Input.inputString);
+            switch (Input.inputString) {
+                case "1":
+                    colorToUse = Color.blue;
+                    hasUpdate = true;
+                    break;
+                case "2":
+                    colorToUse = Color.red;
+                    hasUpdate = true;
+                    break;
+                case "3":
+                    colorToUse = Color.green;
+                    hasUpdate = true;
+                    break;
+                case "4":
+                    colorToUse = Color.black;
+                    hasUpdate = true;
+                    break;
+            }
+
+            if (hasUpdate) {
+                renderer.material.color = colorToUse;
+            }
+        }
     }
 }
