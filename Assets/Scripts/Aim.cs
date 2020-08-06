@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this is on the robots head
 public class Aim : MonoBehaviour {
     [SerializeField]
     private Transform _target;

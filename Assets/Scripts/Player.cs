@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     public Vector3 startPosition;
     Renderer renderer;
+    public int speed = 0;
+    public int maxSpeed;
 
     // Start is called before the first frame update
     void Start() {
@@ -12,6 +14,27 @@ public class Player : MonoBehaviour {
         transform.position = startPosition;
         renderer = GetComponent<Renderer>();
         renderer.material.color = Color.red;
+        maxSpeed = Random.Range(60, 120);
+        StartCoroutine(speedFunc());
+        //StartCoroutine(myfunc());
+    }
+
+    private IEnumerator speedFunc() {
+        Debug.Log("coroutine called");
+        while (speed < maxSpeed) {
+            speed += 5;
+            Debug.Log("Incremented speed to " + speed.ToString());
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    private IEnumerator myfunc() {
+        int ticks = 0;
+        while (true) {
+            ticks++;
+            Debug.Log("Tick " + ticks.ToString());
+            yield return new WaitForSeconds(1);
+        }
     }
 
     // Update is called once per frame
