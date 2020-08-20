@@ -7,6 +7,12 @@ public class Player : MonoBehaviour {
     Renderer renderer;
     public int speed = 0;
     public int maxSpeed;
+    public GameObject daCube;
+
+    void changeColor(GameObject objectToChange, Color colorToChangeTo) {
+        MeshRenderer mr = objectToChange.GetComponent<MeshRenderer>();
+        mr.material.color = colorToChangeTo;
+    }
 
     // Start is called before the first frame update
     void Start() {
@@ -64,6 +70,9 @@ public class Player : MonoBehaviour {
                 case "4":
                     colorToUse = Color.black;
                     hasUpdate = true;
+                    break;
+                case "p":
+                    changeColor(daCube, Color.cyan);
                     break;
             }
 
