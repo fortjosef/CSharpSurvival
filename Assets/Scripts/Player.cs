@@ -8,6 +8,8 @@ public class Player : MonoBehaviour {
     public int speed = 0;
     public int maxSpeed;
     public GameObject daCube;
+    public CustomClass[] test;
+    public CustomClass foo;
 
     void changeColor(GameObject objectToChange, Color colorToChangeTo) {
         MeshRenderer mr = objectToChange.GetComponent<MeshRenderer>();
